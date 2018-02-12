@@ -11,10 +11,15 @@ app.get('/', (req, res) => {
 
 io.on('connection',(socket) =>{
   console.log('a user connected');
+   socket.on('chat message', (msg) =>{
+     io.emit('emit message',msg);
+     console.log('message: ' + msg);
+   });
   socket.on('disconnect',() => {
     console.log('a user disconnected');
   });
 });
+
 
 //Emitting events:-
 //The main idea behind Socket.IO is that you can send and receive any events you want, with any data you want. Any objects that can be encoded as JSON will do, and binary data is supported too.
