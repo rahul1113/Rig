@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Login Form Using jQuery </title>
+ <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <!-- <link href="css\styles.css" rel="stylesheet"> -->
+    <style>
+   
+#loginForm label.error {
+	color: red;
+	font-weight: bold;
+}
+.main {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#login {    
+  margin-top:20px;
+  width:200px;
+  height:40px;
+  background:none;
+  border:none;
+  background-color:#0431B4;
+  color:white;
+  font-size:20px;
+  border-radius:3px;
+}
+.passwordInput{
+      margin: 0 auto;
+}
+.emailInput{
+   margin: 20px;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="main">
+<form action="index.html" name="login" id="loginForm"  >
+<h1>Create Login Form Using jQuery</h1>
+<!--<label>Email :</label>
+<input type="text" name="email" id="email">
+<label>Password :</label>
+<input type="password" name="password" id="password"> 
+
+<button>Login</button>-->
+        <div class="emailDiv">  
+            <label>
+			Email:
+            <input class="emailInput" type="text" id="email" name="email" >  
+            </label>
+		</div>
+		<div class="pwdDiv">
+            <label >
+			Password:
+            <input class="passwordInput" type="password" id="password" name="password">
+			</label> 
+        </div>  
+        <div class="loginButtonDiv" >
+            <input type="checkBox"><label class="check" for="checkBox">Keep me logged in</label>
+            <button  onclick="location"  id="login"  >Login</button>
+        </div>
+         
+
+
+</form>
+<script>
+ $(document).ready(function(){
+
+    $("#loginForm").validate({
+        rules: {
+            email: {
+                required: true
+            },
+            password: {
+                required: true 
+				 
+            }
+        },
+        messages: {
+            email: {
+                required: 
+				"specify email"
+            },
+            password: {
+                required: 
+				"specify password"
+            }
+        }
+     
+    });
+
+     /*$("#loginForm").keyup(function () {
+             if ($("input").val() == '') {
+                      
+                    $('#login').prop('disabled', true);
+               } else {
+                        
+                        $('#login').prop('disabled', false);
+                    }
+                });*/
+            
+       
+
+});
+
+</script>
+
+ 
+
+</div>
+</div>
+</body>
+</html>
