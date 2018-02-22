@@ -21,8 +21,9 @@ app.get('/',function(req,res){
 	res.set({
 		'Access-Control-Allow-Origin' : '*'
 	});
-	return res.redirect('/ui',routes);
+	return res.redirect('/ui/login.html');
 }).listen(3000);
+
 
 console.log("Server listening at : 3000");
 app.use('/ui', express.static(__dirname + '/ui'));
@@ -54,7 +55,7 @@ app.post('/sign_up' ,function(req,res){
 	var data = {
 		// "name":name,
 		"email":email,
-		"password": password, 
+		"password": pass, 
 		// "phone" : phone
 	}
 
@@ -70,7 +71,7 @@ app.post('/sign_up' ,function(req,res){
 // 	res.set({
 // 		'Access-Control-Allow-Origin' : '*'
 // 	});
-// 	return res.redirect('/ui/index.html');  
+	return res.redirect('/ui/index.html');  
 
  });
 													
